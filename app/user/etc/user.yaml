@@ -1,0 +1,11 @@
+Name: user
+Host: 0.0.0.0
+Port: 8888
+
+mysql:
+  bsMaster:
+    url:  root:123456@tcp(127.0.0.1:3307)/bs?charset=utf8
+    maxopen: 10
+    maxidle: 5
+
+

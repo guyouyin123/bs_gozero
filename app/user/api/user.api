@@ -1,0 +1,36 @@
+syntax = "v1"
+
+info(
+	title: "user service"
+	desc: "user api"
+	author: "Jeff"
+	email: "xxx@.com"
+	version: "v1"
+)
+
+type (
+	UserInfoRes {
+		UserId int `json:"userId"`
+	}
+	UserInfoReq {
+		UserId int    `json:"userId"`
+		Name   string `json:"name"`
+	}
+	UserInsertInfoRes {
+		Name string `json:"name"`
+	}
+)
+
+@server(
+	group : user //文件夹分组，handler和logic分组放
+	prefix: dev/v1 //路由分组，全路径：dev/v1/user/info
+	middleware: LetMiddleware //局部中间件
+)
+service user {
+	@doc "获取用户信息"
+	@handler userInfo
+	post /user/getInfo (UserInfoRes) returns (UserInfoReq)
+	@doc "新增用户信息"
+	@handler insertInfo
+	post /user/insertInfo (UserInsertInfoRes) returns ()
+}
