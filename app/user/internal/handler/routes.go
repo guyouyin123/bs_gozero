@@ -4,8 +4,8 @@ package handler
 import (
 	"net/http"
 
-	user "bs/app/user/internal/handler/user"
-	"bs/app/user/internal/svc"
+	user "bs_gozero/app/user/internal/handler/user"
+	"bs_gozero/app/user/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

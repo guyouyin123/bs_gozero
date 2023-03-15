@@ -1,15 +1,15 @@
 package main
 
 import (
-	"bs/pkg/middleware"
+	"bs_gozero/pkg/middleware"
 	"flag"
 	"fmt"
 	"github.com/zeromicro/go-zero/core/logx"
 	"os"
 
-	"bs/app/user/internal/config"
-	"bs/app/user/internal/handler"
-	"bs/app/user/internal/svc"
+	"bs_gozero/app/user/internal/config"
+	"bs_gozero/app/user/internal/handler"
+	"bs_gozero/app/user/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

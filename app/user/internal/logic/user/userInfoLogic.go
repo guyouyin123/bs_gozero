@@ -1,9 +1,9 @@
 package user
 
 import (
-	"bs/app/user/internal/svc"
-	"bs/app/user/internal/types"
-	"bs/pkg/qhttpx"
+	"bs_gozero/app/user/internal/svc"
+	"bs_gozero/app/user/internal/types"
+	"bs_gozero/pkg/qhttpx"
 	"context"
 	"fmt"
 	"github.com/zeromicro/go-zero/core/logx"

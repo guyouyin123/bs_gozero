@@ -1,9 +1,9 @@
 package user
 
 import (
-	"bs/app/user/internal/db/user"
-	"bs/app/user/internal/svc"
-	"bs/app/user/internal/types"
+	"bs_gozero/app/user/internal/db/user"
+	"bs_gozero/app/user/internal/svc"
+	"bs_gozero/app/user/internal/types"
 	"context"
 
 	"github.com/zeromicro/go-zero/core/logx"

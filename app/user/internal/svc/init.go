@@ -1,8 +1,8 @@
 package svc
 
 import (
-	"bs/app/user/internal/config"
-	"bs/pkg/mysql"
+	"bs_gozero/app/user/internal/config"
+	"bs_gozero/pkg/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/zeromicro/go-zero/core/logx"
 )

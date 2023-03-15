@@ -1,12 +1,12 @@
 package user
 
 import (
-	"bs/pkg/qhttpx"
+	"bs_gozero/pkg/qhttpx"
 	"net/http"
 
-	"bs/app/user/internal/logic/user"
-	"bs/app/user/internal/svc"
-	"bs/app/user/internal/types"
+	"bs_gozero/app/user/internal/logic/user"
+	"bs_gozero/app/user/internal/svc"
+	"bs_gozero/app/user/internal/types"
 	"github.com/zeromicro/go-zero/rest/httpx"
 )
 

@@ -1,9 +1,9 @@
 package svc
 
 import (
-	"bs/app/user/internal/config"
-	"bs/app/user/internal/db/user"
-	"bs/app/user/internal/middleware"
+	"bs_gozero/app/user/internal/config"
+	"bs_gozero/app/user/internal/db/user"
+	"bs_gozero/app/user/internal/middleware"
 	"github.com/zeromicro/go-zero/rest"
 )
 

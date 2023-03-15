@@ -6,7 +6,7 @@ import requests
 def test_user_get_info():
     url = "http://127.0.0.1:8888/dev/v1/user/getInfo"
     data = {
-        "userId": "70"
+        "userId": 8
     }
     headers = {
         'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ def test_user_get_info():
 def test_user_insert_info():
     url = "http://127.0.0.1:8888/dev/v1/user/insertInfo"
     data = {
-        "name": 123
+        "name": "123"
     }
     headers = {
         'Content-Type': 'application/json'

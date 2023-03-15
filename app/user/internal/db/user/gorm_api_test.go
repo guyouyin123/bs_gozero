@@ -1,7 +1,7 @@
 package user
 
 import (
-	"bs/pkg/mysql"
+	"bs_gozero/pkg/mysql"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"testing"
