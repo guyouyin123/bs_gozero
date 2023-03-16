@@ -56,7 +56,8 @@ func sendData(w http.ResponseWriter, data interface{}) {
 	send(w, StateOk, data, "", "", 0)
 }
 func sendFailed(w http.ResponseWriter, data interface{}) {
-	send(w, StateFailed, data, "", "", 0)
+	errStr := fmt.Sprintf("%s", data)
+	send(w, StateFailed, "", "", errStr, 0)
 }
 func sendCode(w http.ResponseWriter, code State, stateInfo string, data interface{}) {
 	send(w, code, data, stateInfo, "", 0)

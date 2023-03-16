@@ -3,7 +3,7 @@ ListenOn: 0.0.0.0:8081
 #Etcd:
 #  Hosts:
 #  - 0.0.0.0:2379
-#  Key: bike.rpc
+#  Key: bike.rpc #服务发现的key
 
 Mode: dev
 

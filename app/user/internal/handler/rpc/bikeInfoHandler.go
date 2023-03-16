@@ -1,6 +1,7 @@
 package rpc
 
 import (
+	"bs_gozero/pkg/qhttpx"
 	"net/http"
 
 	"bs_gozero/app/user/internal/logic/rpc"
@@ -13,16 +14,16 @@ func BikeInfoHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.BikeInfoRes
 		if err := httpx.Parse(r, &req); err != nil {
-			httpx.Error(w, err)
+			qhttpx.SendParamError(w, err)
 			return
 		}
 
 		l := rpc.NewBikeInfoLogic(r.Context(), svcCtx)
 		resp, err := l.BikeInfo(&req)
 		if err != nil {
-			httpx.Error(w, err)
+			qhttpx.SendFailed(w, err)
 		} else {
-			httpx.OkJson(w, resp)
+			qhttpx.SendData(w, resp)
 		}
 	}
 }

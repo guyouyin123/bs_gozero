@@ -30,7 +30,7 @@ def test_user_insert_info():
 def test_bike_rpc_getInfo ():
     url = "http://127.0.0.1:8888/dev/v1/bike/rpc/getInfo"
     data = {
-        "bikeId": 2
+        "bikeId": 10
     }
     headers = {
         'Content-Type': 'application/json'
