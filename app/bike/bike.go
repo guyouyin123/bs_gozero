@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/zeromicro/go-zero/core/logx"
+	"os"
 
 	"bs_gozero/app/bike/internal/config"
 	"bs_gozero/app/bike/internal/server"
@@ -16,13 +18,20 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-var configFile = flag.String("f", "etc/bike.yaml", "the config file")
-
 func main() {
+	path, _ := os.Getwd()
+	path += "/app/bike/etc/bike.yaml"
+	var configFile = flag.String("f", path, "the config file")
 	flag.Parse()
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+	
+	if err := svc.InitMysql(c); err != nil {
+		logx.Errorf("Fatal initMysql:%s", err.Error())
+		return
+	} //初始化Mysql
+
 	ctx := svc.NewServiceContext(c)
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {

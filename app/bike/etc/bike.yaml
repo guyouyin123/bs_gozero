@@ -1,7 +1,24 @@
 Name: bike.rpc
-ListenOn: 0.0.0.0:8080
-Etcd:
-  Hosts:
-  - 127.0.0.1:2379
-  Key: bike.rpc
+ListenOn: 0.0.0.0:8081
+#Etcd:
+#  Hosts:
+#  - 0.0.0.0:2379
+#  Key: bike.rpc
 
+Mode: dev
+
+mysql:
+  bsMaster:
+    url:  root:123456@tcp(127.0.0.1:3307)/bs?charset=utf8
+    maxopen: 10
+    maxidle: 5
+
+#日志配置
+Log:
+  ServiceName: bike #服务名
+  Mode: file # console(终端),file(文件),volume(k8s挂载) 3种打印模式,一般k8s的话也采用console，然后收集控制台日志
+  Level: debug #debug,info,error,severe 日志输出等级
+  Path: ./logs # 如果Mode为file,log存储路径
+  Encoding: plain #json一行不好看,plain
+  Compress: True #几天的日志打压缩包
+  KeepDays: 3 #保留几天的日志

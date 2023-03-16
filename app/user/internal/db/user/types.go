@@ -1,7 +1,7 @@
 package user
 
 type Info struct {
-	Id      int    `json:"id"`
+	Id      int64  `json:"id"`
 	Name    string `json:"name"`
 	Created int64  `json:"created"`
 	Updated int64  `json:"updated"`

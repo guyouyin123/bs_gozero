@@ -1,4 +1,4 @@
-package user
+package bike
 
 import (
 	"database/sql"
@@ -40,10 +40,9 @@ func (o Option) QueryByBid(id int64) *Info {
 func (o Option) Insert(i *Info) (id int64) {
 	i.Created = time.Now().Unix()
 	i.Updated = time.Now().Unix()
-	//err := o.DbGorm.Table("user").Create(&i).Error
 	err := o.DbGorm.Model(Info{}).Create(&i).Error
 	if err != nil {
-		logx.Errorf("UserInsertErr:%s", err.Error())
+		logx.Errorf("InserttErr:%s", err.Error())
 		return 0
 	}
 	return i.Id

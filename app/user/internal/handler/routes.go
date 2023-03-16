@@ -4,6 +4,7 @@ package handler
 import (
 	"net/http"
 
+	rpc "bs_gozero/app/user/internal/handler/rpc"
 	user "bs_gozero/app/user/internal/handler/user"
 	"bs_gozero/app/user/internal/svc"
 
@@ -24,6 +25,20 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Method:  http.MethodPost,
 					Path:    "/user/insertInfo",
 					Handler: user.InsertInfoHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithPrefix("/dev/v1"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.LetMiddleware},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/bike/rpc/getInfo",
+					Handler: rpc.BikeInfoHandler(serverCtx),
 				},
 			}...,
 		),

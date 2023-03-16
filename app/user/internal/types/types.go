@@ -2,14 +2,23 @@
 package types
 
 type UserInfoRes struct {
-	UserId int `json:"userId"`
+	UserId int64 `json:"userId"`
 }
 
 type UserInfoReq struct {
-	UserId int    `json:"userId"`
+	UserId int64  `json:"userId"`
 	Name   string `json:"name"`
 }
 
 type UserInsertInfoRes struct {
 	Name string `json:"name"`
+}
+
+type BikeInfoRes struct {
+	BikeId int64 `json:"bikeId"`
+}
+
+type BikeInfoReq struct {
+	BikeId   int64  `json:"bikeId"`
+	BikeName string `json:"BikeName"`
 }
