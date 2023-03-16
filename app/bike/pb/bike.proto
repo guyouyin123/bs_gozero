@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "./pb";
+package pb;
+
+message GetBikeInfoRes {
+    int64 id = 1;
+}
+
+message GetBikeInfoReq {
+    int64 id = 1;
+    string BikeName = 2;
+}
+
+service RpcBikeService {
+    rpc RpcGetBikeInfo (GetBikeInfoRes) returns (GetBikeInfoReq);
+}

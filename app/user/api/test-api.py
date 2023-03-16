@@ -6,7 +6,7 @@ import requests
 def test_user_get_info():
     url = "http://127.0.0.1:8888/dev/v1/user/getInfo"
     data = {
-        "userId": 8
+        "userId": 80
     }
     headers = {
         'Content-Type': 'application/json'

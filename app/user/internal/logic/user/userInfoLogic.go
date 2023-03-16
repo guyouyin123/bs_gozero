@@ -29,7 +29,6 @@ func (l *UserInfoLogic) UserInfo(req *types.UserInfoRes) (resp *types.UserInfoRe
 	if userInfo == nil {
 		err := qhttpx.CommonErrorMsg{Code: "100102", Msg: "数据库没有查到哦"}
 		l.Logger.Info(fmt.Sprintf("errCode=%s,errMsg=%s", err.Code, err.Msg))
-		//logx.Errorf("errCode=%s,errMsg=%s", err.Code, err.Msg)
 		return nil, &err
 	}
 	return &types.UserInfoReq{
